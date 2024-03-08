@@ -31,10 +31,10 @@ for option in options:
     chrome_options.add_argument(option)
 
     
-driver = webdriver.Chrome(options = chrome_options)
+driver = webdriver.Chrome(options=chrome_options)
 
 driver.get('https://changjiang.yuketang.cn/v2/web/index')
-print(driver)
+print(driver.page_source)
 with open('./GitHub_Action_Results.txt', 'w') as f:
     f.write(f"This was written with a GitHub action {driver.title}")
 
