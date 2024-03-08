@@ -7,7 +7,7 @@ on:
     - cron: '18 16 * * 1-5'
 
 jobs:
-  build:
+  script:
     runs-on: ubuntu-latest
     steps:
       - name: Set the timezene
@@ -25,13 +25,11 @@ jobs:
       - name: Removing previous chrome instances on runner 
         run: sudo apt purge google-chrome-stable  
         
-       # Need to fetch reqs if needed
       - name: Installing all necessary packages
         run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
       - name: Install xvfb
         run: sudo apt-get install xvfb
 
-  script:
       - name: Running the Python script
         run: python script.py
         
