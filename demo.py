@@ -1,44 +1,17 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-import chromedriver_autoinstaller
-from pyvirtualdisplay import Display
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 import identify
 from selenium.webdriver.common.action_chains import ActionChains
+import slide_verification
 from PIL import Image
 import datetime
-display = Display(visible=0, size=(800, 800))  
-display.start()
 
-chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
-                                      # and if it doesn't exist, download it automatically,
-                                      # then add chromedriver to path
+driver = webdriver.Chrome()
+# driver.maximize_window()
 
-chrome_options = webdriver.ChromeOptions()    
-# Add your options as needed    
-options = [
-  # Define window size here
-   "--window-size=1200,1200",
-    "--ignore-certificate-errors"
- 
-    "--headless",
-    "--disable-gpu",
-    "--window-size=1920,1200",
-    "--ignore-certificate-errors",
-    "--disable-extensions",
-    "--no-sandbox",
-    "--disable-dev-shm-usage",
-    #'--remote-debugging-port=9222'
-]
 
-for option in options:
-    chrome_options.add_argument(option)
-
-    
-driver = webdriver.Chrome(options=chrome_options)
+# driver.set_window_size(1722, 1034)
 
 try:
     driver.set_page_load_timeout(10)
@@ -161,3 +134,4 @@ time.sleep(100)
 
 
 driver.quit()
+

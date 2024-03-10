@@ -27,7 +27,7 @@ jobs:
         run: sudo apt purge google-chrome-stable  
         
       - name: Installing all necessary packages
-        run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
+        run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay Pillow tqdm opencv-python
       - name: Install xvfb
         run: sudo apt-get install xvfb
 
