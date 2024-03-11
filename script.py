@@ -10,6 +10,7 @@ import identify
 from selenium.webdriver.common.action_chains import ActionChains
 from PIL import Image
 import datetime
+import os
 display = Display(visible=0, size=(800, 800))  
 display.start()
 
@@ -50,6 +51,9 @@ def countdown(t):
         time.sleep(1)
         t -= 1
 
+ENV = os.environ
+username = ENV.get('EMAIL')
+password = ENV.get('PASSWORD')
 
 try:
     driver.set_page_load_timeout(10)
@@ -79,13 +83,13 @@ countdown(3)
 
 print('输入账号', end="\r")
 email_input = driver.find_element(By.CSS_SELECTOR, "body > div.wrapper.J_wrapper.login-wraper.J_login.login_changjiang > div.wrapper-inner.clearfix > div.login-box.login-thu > div.account-box.toggle-box > div.content-box > div.form-box.email > div:nth-child(1) > div.input-box > div.left.box-center > input[type=email]")
-email_input.send_keys("2942033733@qq.com")
+email_input.send_keys(username)
 print('已输入账号        ')
 countdown(2)
 
 print('输入密码', end="\r")
 password_input = driver.find_element(By.CSS_SELECTOR, "body > div.wrapper.J_wrapper.login-wraper.J_login.login_changjiang > div.wrapper-inner.clearfix > div.login-box.login-thu > div.account-box.toggle-box > div.content-box > div.form-box.email > div:nth-child(2) > div.input-box > div > input[type=password]")
-password_input.send_keys("Li9765431")
+password_input.send_keys(password)
 print('已输入密码        ')
 countdown(3)
 
