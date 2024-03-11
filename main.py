@@ -116,7 +116,7 @@ ActionChains(driver).release().perform()
 print('################## 登录成功！ ##################')
 driver.switch_to.default_content()
 time.sleep(5)
-driver.save_screenshot("result/login" + f"{current_time}.png")
+driver.save_screenshot("result/login/" + f"{current_time}.png")
 print('Done')
 
 time.sleep(5)                      
