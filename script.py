@@ -52,8 +52,11 @@ def countdown(t):
         t -= 1
 
 ENV = os.environ
-username = ENV.get('EMAIL')
+email = ENV.get('EMAIL')
 password = ENV.get('PASSWORD')
+
+print('email:', email)
+print('password:', password)
 
 try:
     driver.set_page_load_timeout(10)
@@ -83,7 +86,7 @@ countdown(3)
 
 print('输入账号', end="\r")
 email_input = driver.find_element(By.CSS_SELECTOR, "body > div.wrapper.J_wrapper.login-wraper.J_login.login_changjiang > div.wrapper-inner.clearfix > div.login-box.login-thu > div.account-box.toggle-box > div.content-box > div.form-box.email > div:nth-child(1) > div.input-box > div.left.box-center > input[type=email]")
-email_input.send_keys(username)
+email_input.send_keys(email)
 print('已输入账号        ')
 countdown(2)
 
