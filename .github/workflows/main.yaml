@@ -11,7 +11,6 @@ on:
 jobs:
   script:
     runs-on: ubuntu-latest
-    timezone: Asia/Shanghai
     steps:
       - name: Set the timezene
         run: echo "TZ='Asia/Shanghai'" >> $GITHUB_ENV
