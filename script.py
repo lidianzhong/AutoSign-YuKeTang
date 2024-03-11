@@ -140,7 +140,7 @@ ActionChains(driver).click_and_hold(source).perform()
 print('调用 opencv 库识别滑块位置')
 gap_position = slide_verification.calc_gap_position()
 print('滑块位置：', gap_position)
-distance = gap_position - k
+distance = gap_position - k + 10
 print('滑块移动距离：', distance)
 
 print('移动滑块')
