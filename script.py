@@ -155,6 +155,22 @@ print('################## 登录成功！ ##################')
 driver.switch_to.default_content()
 time.sleep(5)
 driver.save_screenshot("result/login/" + f"{current_time}.png")
+
+time.sleep(2)
+
+print('点击上课')
+onlesson = driver.find_element(By.CSS_SELECTOR, "#app > div.viewContainer > div > div.onlesson")
+
+if onlesson:
+    print('found')
+    onlesson.click()
+    time.sleep(5)
+else:
+    print('not found')
+
+
+driver.save_screenshot("result/lesson/" + f"{current_time}.png")
+
 print('Done')
 
 time.sleep(5)   
