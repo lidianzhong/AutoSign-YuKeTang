@@ -66,7 +66,7 @@ def calc_gap_position():
     tl = (tl_cut[0] + br[0], tl[1])
     br = (br_cut[0] + br[0], br[1])
 
-    draw_rectangle(cv2.imread("screenshot.png"), tl, br, 'result/lesson/' + f'{current_time}.png')
+    draw_rectangle(cv2.imread("screenshot.png"), tl, br, 'result/images/' + f'{current_time}_2.png')
     return tl[0]
 
-
+calc_gap_position()
