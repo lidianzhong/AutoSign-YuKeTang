@@ -158,8 +158,14 @@ driver.save_screenshot("result/login/" + f"{current_time}.png")
 
 time.sleep(2)
 
-print('点击上课')
-onlesson = driver.find_element(By.CSS_SELECTOR, "#app > div.viewContainer > div > div.onlesson")
+
+try:
+    print('点击上课')
+    onlesson = driver.find_element(By.CSS_SELECTOR, "#app > div.viewContainer > div > div.onlesson")
+    onlesson.click()
+    time.sleep(2)
+except Exception as e:
+    print('not found')
 
 if onlesson:
     print('found')
@@ -169,8 +175,6 @@ else:
     print('not found')
 
 
-driver.save_screenshot("result/lesson/" + f"{current_time}.png")
-
 print('Done')
 
-time.sleep(10)   
+time.sleep(2)   

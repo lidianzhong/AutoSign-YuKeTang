@@ -59,7 +59,7 @@ def calc_gap_position():
     draw_rectangle(cv2.imread("screenshot.png"), tl, br, 'result/images/' + f'{current_time}_1.png')
     # print(tl, br)
     # 对背景图片进行裁剪
-    cutting("screenshot.png", tl, br, "cut.png")
+    # cutting("screenshot.png", tl, br, "cut.png")
     # 在裁剪的图片中识别拼图缺口
     tl_cut, br_cut = image_recognition("cut.png","slide_block_screenshot.png")
     # 将裁剪的图片中的缺口位置转换为在原图中的位置
