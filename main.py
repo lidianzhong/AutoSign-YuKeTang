@@ -7,6 +7,9 @@ from PIL import Image
 from tqdm import tqdm
 import time
 import datetime
+import test
+
+current_time = datetime.datetime.now().strftime("%Y%m%d%H%M")
 
 def countdown(t):
     while t:
@@ -18,7 +21,6 @@ def countdown(t):
 
 
 driver = webdriver.Chrome()
-driver.set_window_size(1722, 1034)
 
 try:
     driver.set_page_load_timeout(10)
@@ -98,8 +100,9 @@ print('按住滑块不放')
 ActionChains(driver).click_and_hold(source).perform()
 
 print('调用 opencv 库识别滑块位置')
-current_time = datetime.datetime.now().strftime("%Y%m%d%H%M")
-distance = slide_verification.identify_gap_1("screenshot.png", "slide_block_screenshot.png", f"{current_time}.png") - k
+gap_position = test.calc_gap_position()
+print('滑块位置：', gap_position)
+distance = gap_position - k
 print('滑块移动距离：', distance)
 
 print('移动滑块')
@@ -112,7 +115,8 @@ ActionChains(driver).release().perform()
 
 print('################## 登录成功！ ##################')
 driver.switch_to.default_content()
-driver.save_screenshot("login_screenshot.png")
+time.sleep(5)
+driver.save_screenshot("result/login" + f"{current_time}.png")
 print('Done')
 
 time.sleep(5)                      

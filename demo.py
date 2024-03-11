@@ -93,7 +93,7 @@ screenshot = tc_operation_div.screenshot_as_png
 with open("screenshot.png", "wb") as file:
     file.write(screenshot)
 
-# 裁剪掉左边50
+# 裁剪掉左边100
 image = Image.open("screenshot.png")
 width, height = image.size
 cropped_image = image.crop((100, 0, width, height))
