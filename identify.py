@@ -13,8 +13,8 @@ def identify_gap(bg, tp, out):
     bg_img = cv2.imread(bg)  # 背景图片
     tp_img = cv2.imread(tp)  # 缺口图片
     # 识别图片边缘
-    bg_edge = cv2.Canny(bg_img, 100, 200)
-    tp_edge = cv2.Canny(tp_img, 100, 200)
+    bg_edge = cv2.Canny(bg_img, 150, 200)
+    tp_edge = cv2.Canny(tp_img, 150, 200)
     # 转换图片格式
     bg_pic = cv2.cvtColor(bg_edge, cv2.COLOR_GRAY2RGB)
     tp_pic = cv2.cvtColor(tp_edge, cv2.COLOR_GRAY2RGB)
