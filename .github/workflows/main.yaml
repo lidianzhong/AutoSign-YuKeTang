@@ -2,10 +2,10 @@ name: YuKeTang Sign In
 
 on:
   schedule:
-    - cron: '58 7 * * 1-5'
-    - cron: '58 9 * * 1-5'
-    - cron: '28 14 * * 1-5'
-    - cron: '18 16 * * 1-5'
+    - cron: '58 23 * * 1-5'
+    - cron: '58 1 * * 1-5'
+    - cron: '28 6 * * 1-5'
+    - cron: '18 8 * * 1-5'
   workflow_dispatch:
 
 env:

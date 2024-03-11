@@ -173,4 +173,4 @@ driver.save_screenshot("result/lesson/" + f"{current_time}.png")
 
 print('Done')
 
-time.sleep(5)   
+time.sleep(10)   
