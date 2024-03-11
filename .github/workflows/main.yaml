@@ -1,4 +1,4 @@
-name: Run Selenium On GitHub Action
+name: YuKeTang Sign In
 on:
   workflow_dispatch:
   schedule:
@@ -32,6 +32,9 @@ jobs:
         run: sudo apt-get install xvfb
 
       - name: Running the Python script
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
         run: python script.py
         
       - name: Commit and Push The Results From Python Selenium Action
