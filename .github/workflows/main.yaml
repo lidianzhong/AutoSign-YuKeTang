@@ -1,11 +1,12 @@
 name: YuKeTang Sign In
+
 on:
-  workflow_dispatch:
   schedule:
     - cron: '58 7 * * 1-5'
     - cron: '58 9 * * 1-5'
     - cron: '28 14 * * 1-5'
     - cron: '18 16 * * 1-5'
+  workflow_dispatch:
 
 jobs:
   script:

@@ -6,11 +6,13 @@ from pyvirtualdisplay import Display
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
-import identify
 from selenium.webdriver.common.action_chains import ActionChains
 from PIL import Image
 import datetime
 import os
+import slide_verification
+
+
 display = Display(visible=0, size=(800, 800))  
 display.start()
 
@@ -136,7 +138,7 @@ print('按住滑块不放')
 ActionChains(driver).click_and_hold(source).perform()
 
 print('调用 opencv 库识别滑块位置')
-gap_position = test.calc_gap_position()
+gap_position = slide_verification.calc_gap_position()
 print('滑块位置：', gap_position)
 distance = gap_position - k
 print('滑块移动距离：', distance)
