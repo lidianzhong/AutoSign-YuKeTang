@@ -115,10 +115,10 @@ ActionChains(driver).release().perform()
 
 print('################## 登录成功！ ##################')
 driver.switch_to.default_content()
-time.sleep(5)
+time.sleep(3)
 driver.save_screenshot("result/login/" + f"{current_time}.png")
 
-time.sleep(2)
+time.sleep(10)
 
 print('点击上课')
 onlesson = driver.find_element(By.CSS_SELECTOR, "#app > div.viewContainer > div > div.onlesson")
