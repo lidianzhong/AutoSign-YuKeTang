@@ -11,6 +11,8 @@ from PIL import Image
 import datetime
 import os
 import slide_verification
+import requests
+import get_time
 
 
 display = Display(visible=0, size=(800, 800))  
@@ -57,8 +59,9 @@ ENV = os.environ
 email = ENV.get('EMAIL')
 password = ENV.get('PASSWORD')
 
-print('email:', email)
-print('password:', password)
+beijing_time = get_time.get_beijing_time()
+if beijing_time:
+    print("当前北京时间:", beijing_time)
 
 try:
     driver.set_page_load_timeout(10)
@@ -165,13 +168,6 @@ try:
     onlesson.click()
     time.sleep(2)
 except Exception as e:
-    print('not found')
-
-if onlesson:
-    print('found')
-    onlesson.click()
-    time.sleep(5)
-else:
     print('not found')
 
 
